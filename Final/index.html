@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BookMyShowcase</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Welcome Popup -->
+<div id="welcomeModal" class="modal-backdrop">
+  <div class="modal">
+    <h2>Welcome to BookMyShowcase 🎉</h2>
+    <p>Book your event tickets instantly and safely!</p>
+    <button id="startBtn">Start Booking</button>
+  </div>
+</div>
+
+<!-- Main Card -->
+<main class="card">
+  <h1>BookMyShowcase</h1>
+  <p class="lead">Premium event booking — live calculation & fast checkout</p>
+
+  <form id="bookingForm">
+    
+    <label>Your Name</label>
+    <input type="text" id="username" required>
+
+    <label>Select Event</label>
+    <select id="eventType" required>
+      <option value="" data-price="0">-- Select Event --</option>
+      <option value="Music" data-price="800">🎵 Music Concert — ₹800</option>
+      <option value="Dance" data-price="550">💃 Dance Show — ₹550</option>
+      <option value="Drama" data-price="350">🎭 Drama — ₹350</option>
+      <option value="Standup" data-price="600">😂 Stand-up Comedy — ₹600</option>
+    </select>
+
+    <div class="row">
+      <div>
+        <label>Tickets</label>
+        <input type="number" id="ticketCount" min="1" value="1">
+      </div>
+
+      <div>
+        <label>Promo Code</label>
+        <input type="text" id="promo" placeholder="SAVE10">
+      </div>
+    </div>
+
+    <div class="total">Total Cost: <span id="totalDisplay">₹0</span></div>
+
+    <button type="submit" class="btn">Proceed</button>
+  </form>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

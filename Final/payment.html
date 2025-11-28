@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="centered">
+
+<div class="payment-card">
+  <h1>Payment Page 💳</h1>
+  <p id="payDetails"></p>
+  
+  <button class="btn" onclick="completePayment()">Pay Now</button>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("username");
+  const event = params.get("event");
+  const total = params.get("total");
+
+  document.getElementById("payDetails").innerHTML =
+    `<strong>Name:</strong> ${name}<br>
+     <strong>Event:</strong> ${event}<br>
+     <strong>Total Payable:</strong> ₹${total}`;
+
+  function completePayment() {
+    alert("Payment Successful! 🎉\n\nYour booking is confirmed!");
+    window.location = "index.html";
+  }
+</script>
+
+</body>
+</html>

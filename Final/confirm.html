@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Confirmation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="centered">
+
+<div class="confirm-card">
+  <h1>Booking Confirmation ✔</h1>
+  <p id="details"></p>
+
+  <button class="btn" onclick="goToPayment()">Proceed to Payment</button>
+  <button class="btn2" onclick="window.location='index.html'">Go Back</button>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("username");
+  const event = params.get("event");
+  const tickets = params.get("tickets");
+  const total = params.get("total");
+
+  document.getElementById("details").innerHTML =
+    `<strong>Name:</strong> ${name}<br>
+     <strong>Event:</strong> ${event}<br>
+     <strong>Tickets:</strong> ${tickets}<br>
+     <strong>Total Amount:</strong> ₹${total}`;
+
+  function goToPayment() {
+    window.location = "payment.html?" + params.toString();
+  }
+</script>
+
+</body>
+</html>
